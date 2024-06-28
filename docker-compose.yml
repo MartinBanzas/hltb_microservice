@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+
+  apifinciclo:
+    container_name: hltb_microservice_container
+    image: hltb_microservice:latest
+    build:
+      context: ./
+      dockerfile: dockerfile
+    env_file:
+      - .env
+    ports:
+      - "5000:8910"
+    volumes:
+      - ./:/app
